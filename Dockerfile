@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx.armhf:3.5
+FROM lsiobase/alpine.nginx.arm64
 MAINTAINER sparklyballs
 
 # set version label
