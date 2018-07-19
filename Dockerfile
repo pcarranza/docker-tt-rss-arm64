@@ -32,6 +32,13 @@ RUN \
 # copy local files
 COPY root/ /
 
+ADD https://git.tt-rss.org/git/tt-rss/archive/master.tar.gz /tmp/master.tar.gz
+
+RUN mkdir -p /var/www/tt-rss \
+    && tar xf /tmp/master.tar.gz -C /var/www/tt-rss --strip-components=1 \
+    && rm /tmp/master.tar.gz \
+    && chown -R abc:abc /var/www/tt-rss
+
 # ports and volumes
 EXPOSE 80 443
 VOLUME /config
